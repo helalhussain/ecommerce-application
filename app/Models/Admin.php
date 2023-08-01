@@ -2,10 +2,14 @@
 
 namespace App\Models;
 
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Notifications\AdminResetPasswordNotification;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
-class Admin extends Model
+class Admin extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -14,11 +18,14 @@ class Admin extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    // protected $fillable = [
+    //     'name',
+    //     'email',
+    //     'phone',
+    //     'avatar',
+    //     'password',
+    // ];
+    protected $guarded = ['id'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -37,6 +44,22 @@ class Admin extends Model
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
     ];
+
+
+    /**
+     * access permission
+     *
+     * @return bool
+     */
+
+
+    /**
+     * Get the role that owns the Admin
+     *
+     */
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 }

@@ -42,7 +42,7 @@
 
                                     <div class="text-center">
                                         <a href="index.html">
-                                            <img src="/build/assets/admin/images/logo-dark.png" height="22" alt="logo">
+                                            {{-- <img src="/build/assets/admin/images/logo-dark.png" height="22" alt="logo"> --}}
                                         </a>
 
                                         <h5 class="text-primary mb-2 mt-4">Welcome Back !</h5>
@@ -115,13 +115,13 @@
     </div>
 
     <!-- JAVASCRIPT -->
-    <script src="/build/assets/admin/libs/jquery/jquery.min.js"></script>
+    {{-- <script src="/build/assets/admin/libs/jquery/jquery.min.js"></script>
     <script src="/build/assets/admin/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/build/assets/admin/libs/metismenu/metisMenu.min.js"></script>
     <script src="/build/assets/admin/libs/simplebar/simplebar.min.js"></script>
     <script src="/build/assets/admin/libs/node-waves/waves.min.js"></script>
 
-    <script src="/build/assets/admin/js/app.js"></script>
+    <script src="/build/assets/admin/js/app.js"></script> --}}
 
 </body>
 

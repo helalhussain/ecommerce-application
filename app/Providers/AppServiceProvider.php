@@ -19,10 +19,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        view()->composer('layouts.admin.partials.script', function ($view) {
-            $view->with([
-                'permissions' => auth()->check() ? auth()->user()->role?->permissions : []
-            ]);
-        });
+       
     }
 }

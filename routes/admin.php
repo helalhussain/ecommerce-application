@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\{
     DashboardController,
-  
+    CategoryController,
+
 };
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
@@ -22,10 +23,7 @@ Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name(
 // Route::get('password', [PasswordController::class, 'index'])->name('password.index');
 // Route::put('password', [PasswordController::class, 'update'])->name('password.update');
 
+
 Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
 
-Route::group(['prefix' => 'role-management'], function () {
-    Route::resource('role', RoleController::class)->except('show');
-    // Route::get('permission', PermissionController::class)->name('permission.index');
-    Route::resource('user', UserController::class);
-});
+Route::resource('category', CategoryController::class);
